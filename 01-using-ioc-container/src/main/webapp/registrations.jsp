@@ -8,7 +8,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Using IOC Container</title>
+<title>Registrations</title>
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
 	rel="stylesheet"
@@ -24,41 +24,40 @@
 	<div class="container mt-4">
 		<h1>Using IOC Container</h1>
 
-		<h3>Courses</h3>
+		<h3>Registration for ${ course.name }</h3>
+		
+		<h5><a href="/">Home</a></h5>
 
 		<div>
-			<c:url var="addNew" value="/course-edit"></c:url>
-			<a href="${ addNew }" class="btn btn-primary">Add New Course</a>
+			<a href="/registration-edit?courseId=${ course.id }&openClassId=${ openClassId }" class="btn btn-primary">Add New Registration</a>
 		</div>
 
 
 		<div class="mt-4">
 			<c:choose>
-				<c:when test="${ empty courses }">
-					<div class="alert alert-warning">There is no course. Please
-						create new course.</div>
+				<c:when test="${ empty registrations }">
+					<div class="alert alert-warning">There is no registration. Please
+						create new registration.</div>
 				</c:when>
 				<c:otherwise>
 					<table class="table table-striped">
 						<thead>
 							<tr>
-								<th>ID</th>
-								<th>Name</th>
-								<th>Fees</th>
-								<th>Duration</th>
-								<th>Description</th>
-								<th></th>
+								<th>Course</th>
+								<th>Teacher</th>
+								<th>Student</th>
+								<th>Student Phone</th>
+								<th>Student Email</th>
 							</tr>
 						</thead>
 						<tbody>
-							<c:forEach var="c" items="${ courses }">
+							<c:forEach var="r" items="${ registrations }">
 								<tr>
-									<td>${ c.id }</td>
-									<td>${ c.name }</td>
-									<td>${ c.fees }</td>
-									<td>${ c.duration } Months</td>
-									<td>${ c.description }</td>
-									<td><a href="classes?courseId=${ c.id }">Open Classes</a></td>
+									<td>${ r.openClass.course.name }</td>
+									<td>${ r.openClass.teacher }</td>
+									<td>${ r.student }</td>
+									<td>${ r.phone }</td>
+									<td>${ r.email }</td>
 								</tr>
 
 							</c:forEach>
