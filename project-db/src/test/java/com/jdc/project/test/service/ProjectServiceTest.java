@@ -35,6 +35,7 @@ public class ProjectServiceTest {
 	@Value("${project.empty.start}")
 	private String noStartDate;	
 	
+	@Disabled
 	@Order(1)
 	@ParameterizedTest
 	@ValueSource(strings = {
@@ -52,6 +53,7 @@ public class ProjectServiceTest {
 		assertEquals(expectedId, id);
 	}
 	
+	@Disabled
 	@Order(2)
 	@ParameterizedTest
 	@ValueSource(strings = {
@@ -97,9 +99,9 @@ public class ProjectServiceTest {
 			"1,Book Store,Shopping System,2,2022-05-10,6,Aung Aung,aungaung",
 			"2,Project DB,Project Management System,3,2022-04-01,12,Aung Naing,aungnaing",
 			"3,Smart Kitchen,Restaurant Management System,4,2022-02-15,9,Thiha,thiha",
-			"4,Doctor Help,Clinick Management System,2,2022-05-10,6,Aung Aung,aungaung",
-			"5,Order Me,Order Management System,2,2022-05-10,18,Aung Aung,aungaung",
-			"6,The Movies,Movies Informations Provider,3,2022-05-10,6,Aung Naing,aungnaing"
+			"4,Doctor Help,Clinick Management System,2,2022-05-01,6,Aung Aung,aungaung",
+			"5,Order Me,Order Management System,2,2022-05-15,18,Aung Aung,aungaung",
+			"6,The Movies,Movies Informations Provider,3,2022-04-10,6,Aung Naing,aungnaing"
 	})
 	void should_found_with_id(String csv) {
 		var id = id(csv);

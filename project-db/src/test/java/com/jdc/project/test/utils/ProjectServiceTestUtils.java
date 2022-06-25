@@ -23,6 +23,7 @@ public class ProjectServiceTestUtils {
 			dto.setStartDate(localDate(array[4]));
 			dto.setMonths(integer(array[5]));
 			dto.setManagerName(array[6]);
+			dto.setManagerLogin(array[7]);
 			return dto;
 		}
 		

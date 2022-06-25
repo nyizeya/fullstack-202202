@@ -17,7 +17,7 @@ public class CommonUtils {
 	
 	static LocalDate localDate(String str) {
 		if(StringUtils.hasLength(str)) {
-			return LocalDate.parse(str, DateTimeFormatter.ofPattern("yyyyMMdd"));
+			return LocalDate.parse(str, DateTimeFormatter.ofPattern("yyyy-MM-dd"));
 		}
 		
 		return null;

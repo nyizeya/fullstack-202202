@@ -2,7 +2,7 @@ package com.jdc.project.model.dto;
 
 import java.time.LocalDate;
 
-public class Project {
+public class Project implements ProjectVO {
 
 	private int id;
 	private String name;
