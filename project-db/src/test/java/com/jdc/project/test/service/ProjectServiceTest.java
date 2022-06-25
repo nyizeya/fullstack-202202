@@ -35,7 +35,7 @@ public class ProjectServiceTest {
 	@Value("${project.empty.start}")
 	private String noStartDate;	
 	
-	@Disabled
+//	@Disabled
 	@Order(1)
 	@ParameterizedTest
 	@ValueSource(strings = {
@@ -53,7 +53,7 @@ public class ProjectServiceTest {
 		assertEquals(expectedId, id);
 	}
 	
-	@Disabled
+//	@Disabled
 	@Order(2)
 	@ParameterizedTest
 	@ValueSource(strings = {
@@ -66,7 +66,7 @@ public class ProjectServiceTest {
 		assertEquals(noName, exception.getMessage());
 	}
 	
-	@Disabled
+//	@Disabled
 	@Order(3)
 	@ParameterizedTest
 	@ValueSource(strings = {
@@ -79,7 +79,7 @@ public class ProjectServiceTest {
 		assertEquals(noManager, exception.getMessage());
 	}
 	
-	@Disabled
+//	@Disabled
 	@Order(4)
 	@ParameterizedTest
 	@ValueSource(strings = {
@@ -92,16 +92,16 @@ public class ProjectServiceTest {
 		assertEquals(noStartDate, exception.getMessage());
 	}
 	
-	@Disabled
+//	@Disabled
 	@Order(5)
 	@ParameterizedTest
 	@ValueSource(strings = {
-			"1,Book Store,Shopping System,2,2022-05-10,6,Aung Aung,aungaung",
-			"2,Project DB,Project Management System,3,2022-04-01,12,Aung Naing,aungnaing",
-			"3,Smart Kitchen,Restaurant Management System,4,2022-02-15,9,Thiha,thiha",
-			"4,Doctor Help,Clinick Management System,2,2022-05-01,6,Aung Aung,aungaung",
-			"5,Order Me,Order Management System,2,2022-05-15,18,Aung Aung,aungaung",
-			"6,The Movies,Movies Informations Provider,3,2022-04-10,6,Aung Naing,aungnaing"
+			"1,Book Store,Shopping System,2,20220510,6,Aung Aung,aungaung",
+			"2,Project DB,Project Management System,3,20220401,12,Aung Naing,aungnaing",
+			"3,Smart Kitchen,Restaurant Management System,4,20220215,9,Thiha,thiha",
+			"4,Doctor Help,Clinick Management System,2,20220501,6,Aung Aung,aungaung",
+			"5,Order Me,Order Management System,2,20220515,18,Aung Aung,aungaung",
+			"6,The Movies,Movies Informations Provider,3,20220410,6,Aung Naing,aungnaing"
 	})
 	void should_found_with_id(String csv) {
 		var id = id(csv);
@@ -122,7 +122,7 @@ public class ProjectServiceTest {
 		
 	}
 
-	@Disabled
+//	@Disabled
 	@Order(6)
 	@ParameterizedTest
 	@CsvSource({
@@ -140,7 +140,7 @@ public class ProjectServiceTest {
 		assertEquals(size, list.size());
 	}
 	
-	@Disabled
+//	@Disabled
 	@Order(7)
 	@ParameterizedTest
 	@CsvSource({
@@ -154,7 +154,7 @@ public class ProjectServiceTest {
 		assertEquals(expected, result);
 	}
 	
-	@Disabled
+//	@Disabled
 	@Order(8)
 	@ParameterizedTest
 	@CsvSource({
